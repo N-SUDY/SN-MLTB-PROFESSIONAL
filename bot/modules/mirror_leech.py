@@ -418,13 +418,13 @@ def zip_mirror(update, context):
     _mirror_leech(context.bot, update.message, True)
 
 def qb_mirror(update, context):
-    _mirror_leech(context.bot, update.message)
+    _mirror_leech(context.bot, update.message, isQbit=True)
 
 def qb_unzip_mirror(update, context):
-    _mirror_leech(context.bot, update.message, extract=True)
+    _mirror_leech(context.bot, update.message, extract=True, isQbit=True)
 
 def qb_zip_mirror(update, context):
-    _mirror_leech(context.bot, update.message, True)
+    _mirror_leech(context.bot, update.message, True, isQbit=True)
 
 def leech(update, context):
     _mirror_leech(context.bot, update.message, isLeech=True)
@@ -436,13 +436,13 @@ def zip_leech(update, context):
     _mirror_leech(context.bot, update.message, True, isLeech=True)
 
 def qb_leech(update, context):
-    _mirror_leech(context.bot, update.message, isLeech=True)
+    _mirror_leech(context.bot, update.message, isQbit=True, isLeech=True)
 
 def qb_unzip_leech(update, context):
-    _mirror_leech(context.bot, update.message, extract=True, isLeech=True)
+    _mirror_leech(context.bot, update.message, extract=True, isQbit=True, isLeech=True)
 
 def qb_zip_leech(update, context):
-    _mirror_leech(context.bot, update.message, True, isLeech=True)
+    _mirror_leech(context.bot, update.message, True, isQbit=True, isLeech=True)
 
 authfilter = CustomFilters.authorized_chat if config_dict['MIRROR_ENABLED'] is True else CustomFilters.owner_filter
 mirror_handler = CommandHandler(BotCommands.MirrorCommand, mirror,
